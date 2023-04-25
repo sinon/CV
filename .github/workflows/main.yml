@@ -9,13 +9,19 @@ jobs:
       - name: Set current date as env variable
         run: echo "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
       - name: Rename file
-        run: mv cv.tex RobHand-CV-${{ env.date }}.tex
+        run: mv cv.tex $FILE_NAME
+        env:
+          FILE_NAME: RobHand-CV-${{ env.date }}.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: RobHand-CV-${{ env.date }}.tex
+          root_file: $FILE_NAME
+        env:
+          FILE_NAME: RobHand-CV-${{ env.date }}.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          name: RobHand-CV-${{ env.date }}
-          path: RobHand-CV-${{ env.date }}.pdf
+          name: $FILE_NAME
+          path: $FILE_NAME.pdf
+        env:
+          FILE_NAME: RobHand-CV-${{ env.date }}
