@@ -6,12 +6,17 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Rename file
+        run: mv cv.tex RobHand-CV-${{ steps.date.outputs.name}}.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: cv.tex
+          root_file: RobHand-CV-${{ steps.date.outputs.name}}.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          name: CV
-          path: cv.pdf
+          name: RobHand-CV-${{ steps.data.outputs.name }}
+          path: RobHand-CV-${{ steps.data.outputs.name }}.pdf
