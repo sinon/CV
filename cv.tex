@@ -7,6 +7,8 @@
 \usepackage{textcomp}
 \usepackage{fontawesome}
 \usepackage{enumitem}
+
+
 \DeclareFontFamily{U}{fontawesomeOne}{}
 \DeclareFontShape{U}{fontawesomeOne}{m}{n}
 {<-> FontAwesome--fontawesomeone}{}
@@ -38,19 +40,16 @@
 #2 \\
 \end{tabular*}}
 
-% make "C++" look pretty when used in text by touching up the plus signs
-\newcommand{\CPP}
-{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
 
 % and the actual content starts here
 \begin{document}
 
 \begin{center}
-	{\LARGE \textbf{Rob Hand}}\\
-	London, United Kingdom
-	\vspace{0.05cm}
-	\\
-	\raisebox{-0.2\height} {\Large \faPhoneSquare} \ \  +44 7402 232095 \hfill\raisebox{-0.2\height}{\Large \faEnvelopeSquare} \ \ rob.h.1988@gmail.com \hfill \raisebox{-0.2\height}{\Large \faGithubSquare} \ \ github.com/Sinon \hfill \raisebox{-0.2\height}{\Large \faLinkedinSquare} \ \ linkedin.com/in/robhand
+  {\LARGE \textbf{Rob Hand}}\\
+  London, United Kingdom
+  \vspace{0.05cm}
+  \\
+  \raisebox{-0.2\height} {\Large \faPhoneSquare} \ \  +44 7402 232095 \hfill\raisebox{-0.2\height}{\Large \faEnvelopeSquare} \ \ rob.h.1988@gmail.com \hfill \raisebox{-0.2\height}{\Large \faGithubSquare} \ \ github.com/Sinon \hfill \raisebox{-0.2\height}{\Large \faLinkedinSquare} \ \ linkedin.com/in/robhand
 \end{center}
 
 \hrule
@@ -60,67 +59,90 @@
 \renewcommand\labelitemi{}
 \renewcommand\labelitemii{$\bullet$}
 \begin{itemize}[leftmargin=1em]
-	\parskip=0.1em
-		
-		
-	\item
-	      \headerrow
-	      {\textbf{Globality}}
-	      {\textbf{London, UK}}
-	      \headerrow
-	      {\emph{Engineering Manager / Tech Lead}}
-	      {\emph{March 2022 -- Present}}
-	      \begin{itemize*}
-	      	\item Leading a team of 7 engineers and responsible for their mentorship, growth, performance evaluation and job satisfaction.
-	      	\item Delivered various complex projects on time and to a high quality. 
-	      	\item Led continuous process improvement, optimising for impact \& delivery. To this end I successfully moved the team to a Kanban based system which improved project delivery timelines \& quality.
-            \item Collaborated with the engineering leadership group to deliver department-wide process improvements.
-	      \end{itemize*}
-       
-       	\headerrow
-	      {\emph{Staff Software Engineer / Tech Lead}}
-	      {\emph{March 2021 -- March 2022}}
-	      \begin{itemize*}
-	      	\item Drove the implementation and adoption of improved error reporting and observability tooling across the organization, which reduced notification times from days to minutes and enabled engineers to pro-actively resolve errors.
-            \item Led the architectural design and implementation of a feature to bulk export all supporting documentation for a given project, turning a manual process that could take a user hours into a simple \& delightful experience.
-	      \end{itemize*}
-              	\headerrow
-	      {\emph{Senior Software Engineer II}}
-	      {\emph{October 2019 -- March 2021}}
-	      \begin{itemize*}
-            \item Founding engineer on the first Globality engineering team based in London. Worked closely with my manager to help define the culture and ethic of the London engineering department. Many of the improvements we enacted were adopted in the wider engineering department.
-	      	\item Led the architectural design and rebuild of our user facing reporting feature.
-	      \end{itemize*}
-	      	      
-	\item
-	      \headerrow
-	      {\textbf{eporta (now part of Shopify)}}
-	      {\textbf{London, UK}}
-	      \headerrow
-	      {\emph{Senior Software Engineer}}
-	      {\emph{December 2017 -- October 2019}}
-	      \begin{itemize*}
-	      	\item Designed and implemented a PoC image recognition tool for categorizing the type and style of furniture present in a given photo.
-	      	\item Led the rebuilding of the onboarding flow, to allow an easier signup process.
-	      	\item Led a complete rebuild \& redesign of the entire quoting and ordering flow on the site.
-	      	\item Prototyped, user-tested and implemented a new project management tool so that
-interior designers could manage more of their project on platform.
-	      \end{itemize*}
+  \parskip=0.1em
 
-	      	      
-	\item
-	      \headerrow
-	      {\textbf{Tictrac}}
-	      {\textbf{London, UK}}
-	      \headerrow
-	      {\emph{Senior Software Developer / BE Team Lead}}
-	      {\emph{January 2013 -- December 2017}}
-	      \begin{itemize*}
-	      	\item Technical lead for the backend team. Responsible for
-mentoring, running 360 reviews and performance reviews for two Junior developers along with curating the technical backlog for the team.
-	      	\item Project Lead \& Technical Designer for many of the features implemented for white-labelled health and wellness platform.  
-	      \end{itemize*}
-	      	      
+  \item
+        \headerrow
+        {\textbf{Marks \& Spencer}}
+        {\textbf{London, UK}}
+        \headerrow
+        {\emph{Staff Software Engineer}}
+        {\emph{June 2023 -- Present}}
+        \begin{itemize*}
+          \item Led the design and implementation of tooling for managing multi-channel marketing campaigns on M\&S.
+          \item Delivered a program of work to modernise the services our team was responsible for.
+          Leading to increased stability and fewer bugs escaping to user-facing environments.
+        \end{itemize*}
+        {\emph{\textbf{Technology:} Django, PostgreSQL, aiohttp, FastAPI, Azure, MongoDB}}
+
+  \item
+        \headerrow
+        {\textbf{Globality}}
+        {\textbf{London, UK}}
+        \headerrow
+        {\emph{Engineering Manager / Tech Lead}}
+        {\emph{March 2022 -- May 2023}}
+        \begin{itemize*}
+          \item Leading a team of 7 engineers.
+          Responsible for their mentorship, growth, performance evaluation and job satisfaction.
+          \item Delivered various complex projects on time and to a high quality.
+          \item Led continuous process improvement, optimising for impact \& delivery.
+          To this end I successfully moved the team to a Kanban based system which improved project delivery time \& quality.
+          \item Collaborated with the engineering leadership group to deliver department-wide process improvements.
+        \end{itemize*}
+
+        \headerrow
+        {\emph{Staff Software Engineer / Tech Lead}}
+        {\emph{March 2021 -- March 2022}}
+        \begin{itemize*}
+          \item Drove the implementation and adoption of improved error reporting and observability tooling across the organization,
+          which reduced notification times from days to minutes and enabled engineers to pro-actively resolve errors.
+          \item Led the architectural design and implementation of a feature to bulk export
+          all supporting documentation for a given project,
+          turning a manual process that could take a user hours into a simple \& delightful experience.
+        \end{itemize*}
+        \headerrow
+        {\emph{Senior Software Engineer II}}
+        {\emph{October 2019 -- March 2021}}
+        \begin{itemize*}
+          \item Founding engineer on the first Globality engineering team based in London.
+          Worked closely with my manager to help define the culture and values of the London engineering department.
+          Many of the improvements we enacted were adopted in the wider engineering department.
+          \item Led the architectural design and rebuild of our user facing reporting feature.
+        \end{itemize*}
+        {\emph{\textbf{Technology:} Flask (microcosm), FastAPI, SNS/SQS, RDS, k8s, Docker, SQLAlchemy}}
+  \item
+        \headerrow
+        {\textbf{eporta (acquired by Shopify)}}
+        {\textbf{London, UK}}
+        \headerrow
+        {\emph{Senior Software Engineer}}
+        {\emph{December 2017 -- October 2019}}
+        \begin{itemize*}
+          \item Designed and implemented a PoC image recognition tool for
+          categorizing the type and style of furniture present in a given photo.
+          \item Led the rebuilding of the onboarding flow, to allow an easier sign-up process.
+          \item Led a complete rebuild \& redesign of the entire quoting and ordering flow on the site.
+          \item Prototyped, user-tested and implemented a new project management tool so that
+          interior designers could manage more of their project on platform.
+        \end{itemize*}
+        {\emph{\textbf{Technology:} Django, Django Rest Framework, Postgres, Kinesis, Redshift, Docker}}
+
+  \item
+        \headerrow
+        {\textbf{Tictrac}}
+        {\textbf{London, UK}}
+        \headerrow
+        {\emph{Tech Lead}}
+        {\emph{January 2013 -- December 2017}}
+        \begin{itemize*}
+          \item Technical lead for the backend team. Responsible for
+          mentoring, running 360 reviews and performance reviews for two Junior developers
+          along with curating the technical backlog for the team.
+          \item Project Lead \& Technical Designer for many of the features implemented for
+          white-labelled health and wellness platform.
+        \end{itemize*}
+        {\emph{\textbf{Technology:} Django, Django Rest Framework, Postgres, Docker}}
 \end{itemize}
 
 \hrule
@@ -129,11 +151,11 @@ mentoring, running 360 reviews and performance reviews for two Junior developers
 
 \hyphenpenalty=1000
 \begin{itemize}[leftmargin=1em,noitemsep]
-	\item \textbf{Languages:}
-	      Python, Typescript/Javascript, SQL, \LaTeX, Rust
-	\item \textbf{Software:}
-	      Flask, Django, FastAPI, AWS (Lambda, RDS, Redshift, S3, SQS, SNS, Kinesis), GraphQL, Node, TDD
-    \item \textbf{Management:}
+  \item \textbf{Languages:}
+        Python, Typescript/Javascript, SQL, \LaTeX, Rust
+  \item \textbf{Software:}
+        Flask, Django, FastAPI, AWS (Lambda, RDS, Redshift, S3, SQS, SNS, Kinesis), GraphQL, Node, TDD
+  \item \textbf{Management:}
         Line-management, Cross-functional communication, Project management, Agile, Kanban, JIRA
 \end{itemize}
 
@@ -142,17 +164,17 @@ mentoring, running 360 reviews and performance reviews for two Junior developers
 \subsection*{\Large Education}
 
 \begin{itemize}[leftmargin=1em]
-	\parskip=0.1em
-		
-	\item
-	      \headerrow
-	      {\textbf{Dublin City University}}
-	      {\textbf{Dublin, Ireland}}
-	      \headerrow
-	      {\emph{BSc Computer Applications (Software Engineering)}}
-	      {\emph{2006 -- 2011 }}
+  \parskip=0.1em
 
-	      	      
+  \item
+        \headerrow
+        {\textbf{Dublin City University}}
+        {\textbf{Dublin, Ireland}}
+        \headerrow
+        {\emph{BSc Computer Applications (Software Engineering)}}
+        {\emph{2006 -- 2011 }}
+
+
 \end{itemize}
 \end{document}
 
