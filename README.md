@@ -1,3 +1,3 @@
 # CV
 
-CV written in LaTeX, compiled using github action.
+CV written in Typst, compiled using github action.
