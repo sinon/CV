@@ -5,3 +5,6 @@ cv:
 
 view:cv
     open cv.pdf
+
+watch:
+    typst watch cv.typ
