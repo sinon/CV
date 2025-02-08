@@ -1,20 +1,17 @@
-#import "@preview/scienceicons:0.0.6": orcid-icon
-
+// Sections
 #let resume(
   author: "",
   author-position: left,
   personal-info-position: left,
-  pronouns: "",
   location: "",
   email: "",
   github: "",
   linkedin: "",
   phone: "",
   personal-site: "",
-  orcid: "",
   accent-color: "#000000",
   font: "New Computer Modern",
-  paper: "us-letter",
+  paper: "a4",
   body,
 ) = {
 
@@ -23,20 +20,16 @@
 
   // Document-wide formatting, including font and margins
   set text(
-    // LaTeX style font
     font: font,
     size: 9.5pt,
     lang: "en",
     ligatures: false
   )
 
-  // Reccomended to have 0.5in margin on all sides
   set page(
     margin: (0.5in),
-    paper: paper,
   )
 
-  // Link styles
   show link: underline
 
 
@@ -85,7 +78,6 @@
     align(personal-info-position)[
       #{
         let items = (
-          contact-item(pronouns),
           contact-item(phone),
           contact-item(location),
           contact-item(email, link-type: "mailto:"),
@@ -104,121 +96,57 @@
   body
 }
 
-// Generic two by two component for resume
-#let generic-two-by-two(
-  top-left: "",
-  top-right: "",
-  bottom-left: "",
-  bottom-right: "",
+#let education(
+  institution: "", dates: "",
+  degree: "", location: "",
 ) = {
   [
-    #top-left #h(1fr) #top-right \
-    #bottom-left #h(1fr) #bottom-right
+    #strong(institution) #h(1fr) #location \
+    #emph(degree) #h(1fr) #emph((dates))
   ]
 }
 
-// Generic one by two component for resume
-#let generic-one-by-two(
-  left: "",
-  right: "",
+#let role(
+  title: "", dates: "",
+  company: "", location: "",
 ) = {
   [
-    #left #h(1fr) #right
+    #strong(title) #h(1fr) #dates \
+    #company #h(1fr) #emph(location)
   ]
 }
-
-// Cannot just use normal --- ligature becuase ligatures are disabled for good reasons
-#let dates-helper(
-  start-date: "",
-  end-date: "",
-) = {
-  start-date + " " + $dash.em$ + " " + end-date
-}
-
-// Section components below
-#let edu(
-  institution: "",
-  dates: "",
-  degree: "",
-  gpa: "",
-  location: "",
-) = {
-  generic-two-by-two(
-    top-left: strong(institution),
-    top-right: location,
-    bottom-left: emph(degree),
-    bottom-right: emph(dates),
-  )
-}
-
-#let work(
-  title: "",
-  dates: "",
-  company: "",
-  location: "",
-) = {
-  generic-two-by-two(
-    top-left: strong(title),
-    top-right: dates,
-    bottom-left: company,
-    bottom-right: emph(location),
-  )
-}
-
-
-#let name = "Rob Hand"
-#let location = "London, UK"
-#let email = "rob.h.1988@gmail.com"
-#let github = "github.com/sinon"
-#let linkedin = "linkedin.com/in/robhand"
-#let personal-site = "sinon.github.io/"
-
-#let override = {
-  set text(
-    // LaTeX style font
-    size: 8pt,
-    lang: "en",
-    // Disable ligatures so ATS systems do not get confused when parsing fonts.
-    ligatures: false
-  )
-}
-
+// Content
 #show: resume.with(
-  author: name,
-  location: location,
-  email: email,
-  github: github,
-  linkedin: linkedin,
-  personal-site: personal-site,
+  author: "Rob Hand",
+  location: "London, UK",
+  email: "rob.h.1988@gmail.com",
+  github: "github.com/sinon",
+  linkedin: "linkedin.com/in/robhand",
+  personal-site: "sinon.github.io",
   accent-color: "#26428b",
-  font: "New Computer Modern",
-  paper: "a4",
   author-position: left,
   personal-info-position: left,
 )
 
-
-
 == Work Experience
 
-#work(
+#role(
   title: "Staff Software Engineer",
   location: "London, UK",
   company: "Marks & Spencer",
-  dates: dates-helper(start-date: "June 2023", end-date: "Present"),
+  dates: "June 2023 " + $dash.em$ + " Present"
 )
 - Led the design and implementation of tooling for managing multi-channel personalised marketing campaigns on M&S.
 - Delivered a program of work to modernise the services our team was responsible for. Leading to increased stability and fewer bugs escaping to user-facing environments.
-- Rebuilding our content personalisation service to work within a GraphQL Federated system design. 
+- Rebuilding our content personalisation service to work within a GraphQL Federated system design.
 
-_*Technology:*_ Python, aiohttp, FastAPI, Azure, PostgreSQL, GraphQL, MongoDB, Docker
+_*Technology:*_ Python, aiohttp, Terraform, Github Actions, FastAPI, Azure, PostgreSQL, GraphQL, MongoDB, Docker
 
-
-#work(
+#role(
   title: "Engineering Manager / Tech Lead",
   location: "London, UK",
   company: "Globality Inc.",
-  dates: dates-helper(start-date: "Feb 2022", end-date: "May 2023"),
+  dates: "Feb 2022 " + $dash.em$ + " May 2023"
 )
 - Leading a team of 7 engineers. Responsible for their mentorship, growth, performance evaluation and job satisfaction.
 - Delivered various complex projects on time and to a high quality.
@@ -227,29 +155,29 @@ _*Technology:*_ Python, aiohttp, FastAPI, Azure, PostgreSQL, GraphQL, MongoDB, D
 
 _*Technology:*_ Flask (microcosm), FastAPI, AWS, SNS/SQS, RDS, Kubernetes, Helm, Docker, SQLAlchemy, PostgreSQL
 
-#work(
+#role(
   title: "Staff Software Engineer / Tech Lead",
   location: "London, UK",
   company: "Globality Inc.",
-  dates: dates-helper(start-date: "Feb 2021", end-date: "Feb 2022"),
+  dates: "Feb 2021 " + $dash.em$ + " Feb 2022"
 )
 - Drove the implementation and adoption of improved error reporting and observability tooling across the organization, which reduced notification times from days to minutes and enabled engineers to pro-actively resolve errors.
 - Led the architectural design and implementation of a feature to bulk export all supporting documentation for a given project, turning a manual process that could take a user hours into a simple & delightful experience.
 
-#work(
+#role(
   title: "Senior Software Engineer II",
   location: "London, UK",
   company: "Globality Inc.",
-  dates: dates-helper(start-date: "Oct 2019", end-date: "Feb 2021"),
+  dates: "Oct 2019 " + $dash.em$ + " Feb 2021"
 )
 - Founding engineer on the first Globality engineering team based in London. Worked closely with my manager to help define the culture and values of the London engineering department. Many of the improvements we enacted were adopted in the wider engineering department.
 - Led the architectural design and rebuild of our user facing reporting feature.
 
-#work(
+#role(
   title: "Senior Software Engineer",
   location: "London, UK",
   company: "eporta (acquired by Shopify)",
-  dates: dates-helper(start-date: "Dec 2017", end-date: "Oct 2019"),
+  dates: "Dec 2017 " + $dash.em$ + " Oct 2019"
 )
 - Designed and implemented a PoC image recognition tool for categorizing the type and style of furniture present in a given photo, to automate an expensive manual process.
 - Led the rebuilding of the onboarding flow, to allow an easier sign-up process.
@@ -258,27 +186,25 @@ _*Technology:*_ Flask (microcosm), FastAPI, AWS, SNS/SQS, RDS, Kubernetes, Helm,
 
 *_Technology:_* Django, AWS, Django Rest Framework, PostgreSQL, Kinesis, Redshift, Docker
 
-#work(
+#role(
   title: "Senior Software Engineer - BE Team Lead",
   location: "London, UK",
   company: "Tictrac",
-  dates: dates-helper(start-date: "Aug 2012", end-date: "Oct 2019"),
+  dates: "Aug 2012 " + $dash.em$ + " Dec 2017"
 )
 - Technical lead for the backend team. Responsible for mentoring, running 360 reviews and performance reviews for two Junior developers along with curating the technical backlog for the team.
 - Project Lead & Technical Designer for many of the features implemented for Tictrac's white-labelled health and wellness platform.
 
 *_Technology:_* Python, AWS, Django, Django Rest Framework, PostgreSQL, Docker, Kubernetes
 
-
 == Skills
 - *Programming Languages*: Python, Rust, Typescript/Javascript, HTML/CSS, Bash
 - *Technologies*: Django, FastAPI, Flask, Django Rest Framework, PostgreSQL, Kubernetes, Git, Docker, AWS, Azure, Github Actions, GraphQL
 
 == Education
-
-#edu(
+#education(
   institution: "Dublin City University",
   location: "Dublin, Republic of Ireland",
-  dates: dates-helper(start-date: "2006", end-date: "2011"),
+  dates: "2006 " + $dash.em$ + " 2011",
   degree: "Bachelor's of Science, Computer Applications (Software Engineering)",
 )
